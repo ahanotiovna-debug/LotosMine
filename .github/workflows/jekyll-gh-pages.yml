@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Правила проекта LotosMine</title>
+    <style>
+        :root {
+            --primary-color: #1a237e;
+            --secondary-color: #3949ab;
+            --accent-color: #ff9800;
+            --light-color: #e8eaf6;
+            --dark-color: #0d1440;
+            --danger-color: #d32f2f;
+            --warning-color: #ffa000;
+            --success-color: #388e3c;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+            border-radius: 0 0 10px 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        
+        .rules-section {
+            background-color: white;
+            border-radius: 10px;
+            margin: 20px 0;
+            padding: 30px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+        
+        .rules-section:hover {
+            transform: translateY(-5px);
+        }
+        
+        .section-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            border-bottom: 2px solid var(--light-color);
+            padding-bottom: 10px;
+        }
+        
+        .section-number {
+            background-color: var(--primary-color);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 15px;
+            font-size: 1.2rem;
+        }
+        
+        .section-title {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+        }
+        
+        .rule-item {
+            margin-bottom: 15px;
+            padding-left: 20px;
+            border-left: 3px solid var(--light-color);
+            transition: border-left-color 0.3s ease;
+        }
+        
+        .rule-item:hover {
+            border-left-color: var(--secondary-color);
+        }
+        
+        .rule-number {
+            font-weight: bold;
+            color: var(--secondary-color);
+            margin-right: 5px;
+        }
+        
+        .rule-punishment {
+            display: inline-block;
+            background-color: var(--light-color);
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            margin-left: 10px;
+            color: var(--dark-color);
+        }
+        
+        .punishment-ban {
+            background-color: #ffebee;
+            color: var(--danger-color);
+        }
+        
+        .punishment-mute {
+            background-color: #fff3e0;
+            color: var(--warning-color);
+        }
+        
+        .punishment-permanent {
+            background-color: #f44336;
+            color: white;
+        }
+        
+        .sub-rule {
+            margin-left: 25px;
+            margin-top: 10px;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        .warning-box {
+            background-color: #fff3e0;
+            border-left: 4px solid var(--warning-color);
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        
+        .important-note {
+            background-color: #ffebee;
+            border-left: 4px solid var(--danger-color);
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        
+        .mod-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 10px;
+            margin-top: 15px;
+        }
+        
+        .mod-item {
+            background-color: var(--light-color);
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            
+            header h1 {
+                font-size: 2rem;
+            }
+            
+            .rules-section {
+                padding: 20px;
+            }
+            
+            .mod-list {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Правила проекта LotosMine</h1>
+            <p>Свод правил для гриферского выживания Minecraft</p>
+        </div>
+    </header>
+    
+    <div class="container">
+        <div class="important-note">
+            <strong>Важно:</strong> Регистрируясь на нашем проекте, вы автоматически принимаете данные правила. Незнание правил не освобождает от ответственности.
+        </div>
+        
+        <div class="rules-section">
+            <div class="section-header">
+                <div class="section-number">1</div>
+                <h2 class="section-title">Общие положения</h2>
+            </div>
+            
+            <div class="rule-item">
+                <span class="rule-number">1.1</span> Данный свод правил составлен представителем проекта LotosMine и действителен ТОЛЬКО в рамках режимов "Гриферское выживание" проекта LotosMine.
+            </div>
+            
+            <div class="rule-item">
+                <span class="rule-number">1.2</span> Проект LotosMine - комплекс серверов, расположенных по адресам: mc.reallyworld.ru, mc.playrw.ru, mc.reallyworld.me, mc.reallyworld.online, mc.reallyworld.org.
+            </div>
+            
+            <div class="rule-item">
+                <span class="rule-number">1.3</span> Правила могут быть изменены без явного оповещения основной аудитории проекта.
+            </div>
+            
+            <div class="rule-item">
+                <span class="rule-number">1.4</span> Решения и действия главной администрации (igrovoy, Dan1lip) не обсуждаются и не поддаются разжалованию.
+            </div>
+            
+            <div class="rule-item">
+                <span class="rule-number">1.5</span> Администрация сервера не выдаёт игровые ресурсы/компенсации за их потерю.
+            </div>
+            
+            <div class="rule-item">
+                <span class="rule-number">1.6</span> Продажа, взломы, попытки взломов, передачи аккаунтов, покупки аккаунтов в обход официального сайта, распространение данных игроков, вред серверу, а так же продажи чего либо за реальную валюту - строго запрещены. 
+                <span class="rule-punishment punishment-permanent">Отключение всех аккаунтов</span>
+            </div>
+        </div>
+        
+        <div class="rules-section">
+            <div class="section-header">
+                <div class="section-number">2</div>
+                <h2 class="section-title">Правила регистрации</h2>
+            </div>
+            
+            <div class="rule-item">
+                <span class="rule-number">2.1</span> Никнейм пользователя должен быть корректным.
+                <div class="sub-rule">
+                    <span class="rule-number">2.1.1</span> Никнейм, похожий на никнейм высшей Администрации <span class="rule-punishment">Блокировка аккаунта</span><br>
+                    <span class="rule-number">2.1.2</span> Никнейм сексуального, аморального содержания <span class="rule-punishment">Блокировка аккаунта</span><br>
+                    <span class="rule-number">2.1.3</span> Никнейм, оскорбляющий другого игрока <span class="rule-punishment">Блокировка аккаунта</span><br>
+                    <span class="rule-number">2.1.4</span> Никнейм, содержащий названия запрещенных ПО <span class="rule-punishment">Блокировка аккаунта</span><br>
+                    <span class="rule-number">2.1.5</span> Никнейм, содержащий грубые матерные слова <span class="rule-punishment">Блокировка аккаунта</span><br>
+                    <span class="rule-number">2.1.6</span> Никнейм, не носящий определённого смысла <span class="rule-punishment">Блокировка аккаунта</span>
+                </div>
+            </div>
+            
+            <div class="rule-item">
+                <span class="rule-number">2.2</span> При покупке платных дополнительных возможностей, предоставленный системой чек необходимо сохранить.
+            </div>
+            
+            <div class="rule-item">
+                <span class="rule-number">2.3</span> При утере/взломе аккаунта, необходимо обратиться к техподдержке.
+            </div>
+        </div>
+        
+        <div class="rules-section">
+            <div class="section-header">
+                <div class="section-number">3</div>
+                <h2 class="section-title">Приобретение платных услуг</h2>
+            </div>
+            
+            <div class="rule-item">
+                <span class="rule-number">3.1</span> Игра на проекте не подразумевает платы за использование ресурсов LotosMine.
+            </div>
+            
+            <div class="rule-item">
+                <span class="rule-number">3.2</span> Игрок вправе добровольно оплатить определённую сумму проекту за внутриигровую услугу.
+            </div>
+            
+            <div class="rule-item">
+                <span class="rule-number">3.3</span> При ошибке платежа можно обращаться в техподдержку.
+            </div>
+            
+            <div class="rule-item">
+                <span class="rule-number">3.4</span> Денежные средства за платные услуги не возвращаются.
+            </div>
+            
+            <div class="rule-item">
+                <span class="rule-number">3.5</span> Покупка платных групп не даёт привилегии на игнорирование/нарушение данных правил.
+            </div>
+        </div>
+        
+        <div class="warning-box">
+            <strong>Внимание:</strong> Это только первая часть правил. Полный свод правил включает также разделы о внутриигровом общении, запрещенном ПО, игровом процессе и другие важные аспекты.
+        </div>
+        
+        <div class="rules-section">
+            <div class="section-header">
+                <div class="section-number">5</div>
+                <h2 class="section-title">Запрещенное программное обеспечение</h2>
+            </div>
+            
+            <div class="rule-item">
+                <span class="rule-number">5.2</span> Использование вредоносного, читерского ПО, получение преимущества над игроками.
+                <span class="rule-punishment punishment-ban">Бан на 50 дней + снос дома</span>
+            </div>
+            
+            <div class="rule-item">
+                <span class="rule-number">5.2.1</span> Совместная игра с игроком, нарушивший пункт 5.2.
+                <span class="rule-punishment punishment-ban">Бан на 47 дней</span>
+            </div>
+            
+            <div class="rule-item">
+                <span class="rule-number">5.2.8</span> Неадекватное поведение на проверке.
+                <span class="rule-punishment punishment-ban">Бан на 50 дней</span>
+            </div>
+        </div>
+        
+        <div class="rules-section">
+            <div class="section-header">
+                <div class="section-number">-</div>
+                <h2 class="section-title">Список запрещенных модов</h2>
+            </div>
+            
+            <div class="mod-list">
+                <div class="mod-item">ElytraSwap <span class="rule-punishment punishment-ban">5d бана</span></div>
+                <div class="mod-item">ArmorHotSwap <span class="rule-punishment punishment-ban">5d бана</span></div>
+                <div class="mod-item">Slippery Mod <span class="rule-punishment punishment-ban">50d бана</span></div>
+                <div class="mod-item">StepUp Mod <span class="rule-punishment punishment-ban">30d бана</span></div>
+                <div class="mod-item">AFK-Fish Mod <span class="rule-punishment punishment-ban">5d бана</span></div>
+                <div class="mod-item">InvMove <span class="rule-punishment punishment-ban">7d бана</span></div>
+                <div class="mod-item">Inventory Totem <span class="rule-punishment punishment-ban">50d бана</span></div>
+                <div class="mod-item">TopkaAutoBuy v1, v2 <span class="rule-punishment punishment-ban">7d бана</span></div>
+                <div class="mod-item">GoProne <span class="rule-punishment punishment-ban">15d бана</span></div>
+                <div class="mod-item">CleanCut <span class="rule-punishment punishment-ban">15d бана</span></div>
+                <div class="mod-item">TopkaCasino <span class="rule-punishment punishment-ban">15d бана</span></div>
+                <div class="mod-item">Моды для изменения хитбоксов <span class="rule-punishment punishment-ban">15d бана</span></div>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <div class="container">
+            <p>Проект LotosMine &copy; 2023. Все права защищены.</p>
+            <p>Правила могут быть изменены без предварительного уведомления.</p>
+        </div>
+    </footer>
+</body>
+</html>
